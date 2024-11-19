@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+	height: 100%;
+	margin: unset;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.zoom-on-hover {
+	transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+}
+
+.zoom-on-hover:hover {
+	transform: scale(1.05); /* Scales the image to 110% of its original size */
+}
+
+.block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	max-width: none !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}

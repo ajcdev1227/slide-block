@@ -1,5 +1,7 @@
-import {Nav, Timeline, Container, PulseModal} from "./components"
-import {useState, useEffect, useRef} from "react";
+import {Timeline, Container, PulseModal} from "./components";
+import {useState, useRef} from "react";
+import React from 'react';
+
 import img11 from './assets/images/img1-1.png';
 import img12 from './assets/images/img1-2.png';
 import img13 from './assets/images/img1-3.png';
@@ -284,7 +286,7 @@ const modalProperty = {
 	],
 }
 
-export default function Edit() {
+const App = () => {
 	const setTranslateXRef = useRef(null);
 	const [curIndex, setCurIndex] = useState(0);
 	const [curSubIndex, setCurSubIndex] = useState(0);
@@ -331,3 +333,5 @@ export default function Edit() {
 		</div>
 	);
 }
+
+export default App;

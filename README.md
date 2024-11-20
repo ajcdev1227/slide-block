@@ -1,6 +1,6 @@
 # WordPress React Plugin
 
-The WordPress React Plugin is a modern plugin built using React and TailwindCSS. It enhances your WordPress website with dynamic components like a responsive carousel, offering seamless integration and a stylish user interface.
+The **WordPress React Plugin** is a modern plugin built with React and TailwindCSS. It enhances your WordPress website by adding dynamic and interactive components, such as a responsive carousel, to offer a seamless and stylish user interface.
 
 ## Features
 
@@ -8,6 +8,12 @@ The WordPress React Plugin is a modern plugin built using React and TailwindCSS.
 - **Carousel**: Includes a fully customizable and responsive carousel for showcasing images or content.
 - **TailwindCSS**: Provides sleek, utility-based styling with minimal effort.
 - **WordPress Plugin**: Designed to integrate effortlessly into WordPress.
+- **Dynamic Rendering**: Renders React components dynamically in the front-end for a modern, high-performance user experience.
+
+## Demo
+
+- **Live Demo**: [WordPress React Plugin Demo](https://medalogixdev.wpengine.com/)  
+- **Live Result**: [Slide Block in Action](https://medalogixdev.wpengine.com/slide-block/)
 
 ## Installation
 

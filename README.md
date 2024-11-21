@@ -22,13 +22,13 @@ Follow these steps to install and activate the plugin:
 1. **Clone the repository**:  
    Download the plugin source code by running:  
    ```bash
-   git clone https://github.com/ajcdev1227/wordpress-react-plugin.git
+   git clone https://github.com/ajcdev1227/slide-block.git
    ```
 2. **Navigate to the plugin directory:**
 
     Change to the directory where the plugin code resides:
     ```bash
-    cd wordpress-react-plugin
+    cd slide-block
     ```
 3. **Install dependencies:**
 

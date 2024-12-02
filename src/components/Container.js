@@ -12,7 +12,7 @@ const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, se
     useEffect(() => {
         let initialTranslateX = 0;
         for (let i = 0; i < cardsInfo.length - 1; i++) {
-            initialTranslateX += 336 + 480 * cardsInfo[i].cardInfo.length;
+            initialTranslateX += 480 * cardsInfo[i].cardInfo.length;
         }
         initialTranslateX += 480 * (cardsInfo[cardsInfo.length - 1].cardInfo.length - 1);
         setMaxTranslateX(initialTranslateX);
@@ -22,15 +22,15 @@ const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, se
         let initialTranslateX = 0;
         let i, j;
         for (i = 0; i < cardsInfo.length; i++) {
-            initialTranslateX += (i < 3) ? 296 : 500;
-            if (translateX < initialTranslateX) {
+            initialTranslateX += (i < 3) ? 0 : 500;
+            if (translateX <= initialTranslateX) {
                 setCurIndex(i);
                 setCurSubIndex(0);
                 break;
             }
             for (j = 0; j < cardsInfo[i].cardInfo.length; j++) {
                 initialTranslateX += 480 * j;
-                if (translateX < initialTranslateX) {
+                if (translateX <= initialTranslateX) {
                     break;
                 }
             }
@@ -77,7 +77,13 @@ const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, se
                  onMouseMove={handleMouseMove}
                  onMouseUp={handleMouseUp}
                  onMouseLeave={handleMouseUp}>
-                <div className="flex flex-row gap-[120px] transition-transform duration-[2000ms]"
+                <div className="absolute left-0 top-0 flex flex-col justify-center items-center gap-[8px] h-full pr-[120px] bg-white z-50">
+                    <img src={cardsInfo[curIndex].src} alt={cardsInfo[curIndex].title} className="w-auto h-auto max-w-none"/>
+                    {curIndex !== 3 && (
+                        <span className="text-[#777] font-montserrat text-[15.454px] font-normal leading-[160%] text-center">{cardsInfo[curIndex].title}</span>
+                    )}
+                </div>
+                <div className="flex flex-row gap-[120px] transition-transform duration-[2000ms] ml-[296px]"
                      style={{
                          transform: `translateX(-${translateX}px)`
                      }}>

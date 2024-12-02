@@ -4,7 +4,7 @@ const Timeline = ({cardsInfo, curIndex, curSubIndex, setTranslatePosition}) => {
     const setPosition = (index, subIndex) => {
         let position = 0;
         for (let j = 0; j < index; j++) {
-            position += 336 + 480 * cardsInfo[j].cardInfo.length;
+            position += 480 * cardsInfo[j].cardInfo.length + 40;
         }
         position += 480 * subIndex;
         setTranslatePosition(position);

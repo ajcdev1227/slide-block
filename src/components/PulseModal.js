@@ -18,7 +18,7 @@ const PulseModal = ({cardsInfo, setModalShow, curIndex, curSubIndex}) => {
                         {cardsInfo[curIndex].cardInfo[curSubIndex].title}
                     </span>
                 <div className="flex flex-row items-center justify-center pt-[12px]">
-                    <div className="flex flex-row rounded-[40px] p-[4px] border-[1px]" style={{borderColor: `${cardsInfo[curIndex].color}`}}>
+                    <div className="flex flex-row rounded-[40px] p-[4px] border-solid border-[1px]" style={{borderColor: `${cardsInfo[curIndex].color}`}}>
                         <div className={`px-[24px] py-[16px] rounded-[130px] cursor-pointer w-[211px] flex justify-center`}
                              onClick={() => setTab(0)}
                              style={{background: `${tab === 0 ? cardsInfo[curIndex].color : ''}`}}
@@ -44,7 +44,7 @@ const PulseModal = ({cardsInfo, setModalShow, curIndex, curSubIndex}) => {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-[24px] self-stretch m-[24px] p-[40px] border-[2px] border-[#A1CFC2] rounded-[20px]"
+                <div className="flex flex-col gap-[24px] self-stretch m-[24px] p-[40px] border-solid border-[2px] border-[#A1CFC2] rounded-[20px]"
                      style={{background: `${tab === 1 ? '#1A2141' : '#FFF'}`}}>
                     {tab === 0 ? (
                         <div className="grid grid-cols-2 gap-[100px]">
@@ -208,8 +208,8 @@ const PulseModal = ({cardsInfo, setModalShow, curIndex, curSubIndex}) => {
                                     <>
                                         <div className="grid grid-cols-2 gap-[32px]">
                                             <div className="relative flex flex-col w-[200px] h-[200px] gap-2 rounded-full items-center justify-center">
-                                                <div className="absolute top-0 left-0 w-full h-1/2 border-t-2 border-l-2 border-r-2 border-white rounded-t-full"></div>
-                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-b-2 border-l-2 border-r-2 border-[#1A2141] rounded-b-full"></div>
+                                                <div className="absolute top-0 left-0 w-full h-1/2 border-solid border-t-2 border-l-2 border-r-2 border-white rounded-t-full"></div>
+                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-solid border-b-2 border-l-2 border-r-2 border-[#1A2141] rounded-b-full"></div>
                                                 <span className="text-[36px] text-center font-montserrat font-extrabold leading-[100%] text-white">41%</span>
                                                 <span className="text-[14px] text-center font-montserrat font-normal leading-[160%] text-white">
                                                         Nurses’ Time Spent in EHRs and Documentation.
@@ -217,8 +217,8 @@ const PulseModal = ({cardsInfo, setModalShow, curIndex, curSubIndex}) => {
                                             </div>
 
                                             <div className="relative flex flex-col w-[200px] h-[200px] gap-2 rounded-full items-center justify-center">
-                                                <div className="absolute top-0 left-0 w-full h-1/2 border-t-2 border-l-2 border-r-2 border-[#9BC418] rounded-t-full"></div>
-                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-b-2 border-l-2 border-r-2 border-[#F7F7F7] rounded-b-full"></div>
+                                                <div className="absolute top-0 left-0 w-full h-1/2 border-solid border-t-2 border-l-2 border-r-2 border-[#9BC418] rounded-t-full"></div>
+                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-solid border-b-2 border-l-2 border-r-2 border-[#F7F7F7] rounded-b-full"></div>
                                                 <span className="text-[36px] text-center font-montserrat font-extrabold leading-[100%] text-white">35-54%</span>
                                                 <span className="text-[14px] text-center font-montserrat font-normal leading-[160%] text-white">
                                                         Nurses that report burnout.
@@ -262,8 +262,8 @@ const PulseModal = ({cardsInfo, setModalShow, curIndex, curSubIndex}) => {
                                     <>
                                         <div className="flex flex-row justify-center items-start">
                                             <div className="relative flex flex-col w-[200px] h-[200px] gap-2 rounded-full items-center justify-center">
-                                                <div className="absolute top-0 left-0 w-full h-1/2 border-t-2 border-l-2 border-r-2 border-[#1A2141] rounded-t-full"></div>
-                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-b-2 border-l-2 border-r-2 border-[#F7F7F7] rounded-b-full"></div>
+                                                <div className="absolute top-0 left-0 w-full h-1/2 border-solid border-t-2 border-l-2 border-r-2 border-[#1A2141] rounded-t-full"></div>
+                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-solid border-b-2 border-l-2 border-r-2 border-[#F7F7F7] rounded-b-full"></div>
                                                 <span className="text-[36px] text-center font-montserrat font-extrabold leading-[100%] text-[#1A2141]">54%</span>
                                                 <span className="text-[14px] text-center font-montserrat font-normal leading-[160%] text-[#1A2141]">
                                                         Patients receive less than 30 days of hospice benefit
@@ -277,8 +277,8 @@ const PulseModal = ({cardsInfo, setModalShow, curIndex, curSubIndex}) => {
                                     <>
                                         <div className="flex flex-row justify-center items-start">
                                             <div className="relative flex flex-col w-[200px] h-[200px] gap-2 rounded-full items-center justify-center">
-                                                <div className="absolute top-0 left-0 w-full h-1/2 border-t-2 border-l-2 border-r-2 border-[#1A2141] rounded-t-full"></div>
-                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-b-2 border-l-2 border-r-2 border-[#F7F7F7] rounded-b-full"></div>
+                                                <div className="absolute top-0 left-0 w-full h-1/2 border-solid border-t-2 border-l-2 border-r-2 border-[#1A2141] rounded-t-full"></div>
+                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-solid border-b-2 border-l-2 border-r-2 border-[#F7F7F7] rounded-b-full"></div>
                                                 <span className="text-[36px] text-center font-montserrat font-extrabold leading-[100%] text-[#1A2141]">80%</span>
                                                 <span className="text-[14px] text-center font-montserrat font-normal leading-[160%] text-[#1A2141]">
                                                         of Americans would prefer to recover or die at home, but
@@ -337,8 +337,8 @@ const PulseModal = ({cardsInfo, setModalShow, curIndex, curSubIndex}) => {
                                     <>
                                         <div className="flex flex-row justify-center items-start">
                                             <div className="relative flex flex-col w-[200px] h-[200px] gap-2 rounded-full items-center justify-center">
-                                                <div className="absolute top-0 left-0 w-full h-1/2 border-t-2 border-l-2 border-r-2 border-[#9BC418] rounded-t-full"></div>
-                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-b-2 border-l-2 border-r-2 border-[#F7F7F7] rounded-b-full"></div>
+                                                <div className="absolute top-0 left-0 w-full h-1/2 border-solid border-t-2 border-l-2 border-r-2 border-[#9BC418] rounded-t-full"></div>
+                                                <div className="absolute bottom-0 left-0 w-full h-1/2 border-solid border-b-2 border-l-2 border-r-2 border-[#F7F7F7] rounded-b-full"></div>
                                                 <span className="text-[36px] text-center font-montserrat font-extrabold leading-[100%] text-white">47.9%</span>
                                                 <span className="text-[14px] text-center font-montserrat font-normal leading-[160%] text-white">
                                                         received visits on at least 2 of the final 3 days of their life.

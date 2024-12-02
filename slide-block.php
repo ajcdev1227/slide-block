@@ -24,7 +24,25 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_slide_block_block_init() {
-	register_block_type( __DIR__ . '/build' );
+
+function my_plugin_register_block() {
+    register_block_type_from_metadata( __DIR__. '/build', [
+        'render_callback' => 'my_plugin_render_block',
+    ]);
 }
-add_action( 'init', 'create_block_slide_block_block_init' );
+add_action( 'init', 'my_plugin_register_block' );
+
+function my_plugin_render_block() {
+    return '<div class="wp-block-my_plugin-react-block" style="max-width: unset;"></div>';
+}
+
+function my_plugin_enqueue_block_assets() {
+    wp_enqueue_script(
+        'my_plugin-frontend-script',
+        plugins_url( 'build/view.js', __FILE__ ),
+        [ 'wp-element' ],
+        '1.0.0',
+        true
+    );
+}
+add_action( 'enqueue_block_assets', 'my_plugin_enqueue_block_assets' );

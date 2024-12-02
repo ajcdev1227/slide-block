@@ -28,11 +28,11 @@ html, body, #root {
 }
 
 
-.card:hover .plus-circle {
+.card-block:hover .plus-circle {
 	fill: #1A2141; /* Change to desired hover color */
 }
 
-.card:hover .plus-path {
+.card-block:hover .plus-path {
 	stroke: white; /* Change to desired hover color */
 }
 
@@ -50,3 +50,8 @@ html, body, #root {
 .circle:hover span {
 	color: white;
 }
+
+.block-editor__container img {
+	max-width: none !important;
+}
+

@@ -3,7 +3,7 @@ import React from 'react';
 const Card = ({index, src, curSubIndex, title, cardIndex, curIndex, setCurIndex, setCurSubIndex, setModalShow}) => {
     return (
         <>
-            <div className={`card flex flex-col gap-[16px] w-[400px] ${index % 2 === 1 ? 'justify-end' : 'justify-start'}`}>
+            <div className={`card-block flex flex-col gap-[16px] w-[400px] ${index % 2 === 1 ? 'justify-end' : 'justify-start'}`}>
                 <div className={`flex flex-row w-full items-center justify-center zoom-on-hover ${index % 2 === 0 ? 'h-[60%]' : 'h-[55%]'} `}>
                     <img className={`self-stretch rounded-[24px] cursor-pointer`}
                          src={src}

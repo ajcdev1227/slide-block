@@ -11,7 +11,7 @@ const Timeline = ({cardsInfo, curIndex, curSubIndex, setTranslatePosition}) => {
     }
     return (
         <div className="relative flex flex-row justify-between mb-[clamp(0px,5vw,10px)] mt-[clamp(0px,3vw,10px)] h-[56px] mx-[80px] flex-shrink-0">
-            <div className="flex flex-row p-[4px] justify-start gap-[10px] rounded-[12px] border-[2px] border-[#1A2141] bg-white z-[20] cursor-pointer">
+            <div className="flex flex-row p-[4px] justify-start gap-[10px] rounded-[12px] border-solid border-[2px] border-[#1A2141] bg-white z-[20] cursor-pointer">
                 <div className="flex flex-row gap-[8px] px-[16px] py-[8px] bg-[#1A2141] rounded-[8px]"
                      onClick={() => setPosition(curIndex - 1, 0)}>
                     <img src={cardsInfo[curIndex].icon} alt="SVG Logo"/>
@@ -26,7 +26,7 @@ const Timeline = ({cardsInfo, curIndex, curSubIndex, setTranslatePosition}) => {
                     (i === curSubIndex) ? (
                         <div
                             key={i}
-                            className="flex flex-col justify-center items-center bg-white border-[2px] border-[#1A2141] w-[42px] h-[42px] flex-shrink-0 z-[20] rounded-full cursor-pointer"
+                            className="flex flex-col justify-center items-center bg-white border-solid border-[2px] border-[#1A2141] w-[42px] h-[42px] flex-shrink-0 z-[20] rounded-full cursor-pointer"
                             onClick={() => setPosition(curIndex, i)}>
                             <div className="flex flex-col justify-center items-center bg-[#1A2141] w-[34px] h-[34px] flex-shrink-0 rounded-full">
                                 <span className="text-[#F7F7F7] text-center font-montserrat font-semibold text-[18px]">{i + 1}</span>
@@ -61,7 +61,7 @@ const Timeline = ({cardsInfo, curIndex, curSubIndex, setTranslatePosition}) => {
             </div>
             {curIndex < 3 && (
                 <div
-                    className="inline-flex h-full px-[16px] py-[8px] items-center gap-[8px] rounded-[8px] border-[2px] border-[#1A869C] bg-white z-[20] cursor-pointer"
+                    className="inline-flex h-full px-[16px] py-[8px] items-center gap-[8px] rounded-[8px] border-solid border-[2px] border-[#1A869C] bg-white z-[20] cursor-pointer"
                     onClick={() => setPosition(curIndex + 1, 0)}>
                     <img src={cardsInfo[curIndex + 1].icon} alt="SVG Logo"/>
                     <span className="flex flex-col justify-center text-[#1A869C] font-montserrat text-[18px] font-semibold leading-[120%]">

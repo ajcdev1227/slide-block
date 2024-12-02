@@ -1,5 +1,5 @@
 import React, {useEffect, useState, forwardRef, useImperativeHandle} from 'react';
-import Cards from './Cards/Cards';
+import Group from './Group';
 
 const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, setCurSubIndex, setModalShow}, ref) => {
     const [translateX, setTranslateX] = useState(0);
@@ -70,35 +70,32 @@ const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, se
     };
 
     return (
-        <>
-            <div className="h-[610px] ml-[102px] mb-[54px] mr-[80px] flex flex-row w-[calc(100% - 102px)]">
-                <div className="relative w-full"
-                     onMouseDown={handleMouseDown}
-                     onMouseMove={handleMouseMove}
-                     onMouseUp={handleMouseUp}
-                     onMouseLeave={handleMouseUp}
-                     onWheel={handleScroll}
-                >
-                    <div className="carousel-slide flex flex-row gap-[120px] transition-transform duration-500"
-                         style={{
-                             transform: `translateX(-${translateX}px)`
-                         }}>
-                        {cardsInfo.map((card, index) => (
-                            <Cards
-                                info={card}
-                                key={index}
-                                cardIndex={index}
-                                curSubIndex={curSubIndex}
-                                curIndex={curIndex}
-                                setCurIndex={setCurIndex}
-                                setCurSubIndex={setCurSubIndex}
-                                setModalShow={setModalShow}
-                            />
-                        ))}
-                    </div>
+
+        <div className="flex flex-col bg-white flex-grow justify-center max-h-[610px] h-[calc(100%-100px)]">
+            <div className="relative flex flex-row h-full ml-[102px] overflow-hidden"
+                 onMouseDown={handleMouseDown}
+                 onMouseMove={handleMouseMove}
+                 onMouseUp={handleMouseUp}
+                 onMouseLeave={handleMouseUp}>
+                <div className="flex flex-row gap-[120px] transition-transform duration-[2000ms]"
+                     style={{
+                         transform: `translateX(-${translateX}px)`
+                     }}>
+                    {cardsInfo.map((card, index) => (
+                        <Group
+                            info={card}
+                            key={index}
+                            cardIndex={index}
+                            curSubIndex={curSubIndex}
+                            curIndex={curIndex}
+                            setCurIndex={setCurIndex}
+                            setCurSubIndex={setCurSubIndex}
+                            setModalShow={setModalShow}
+                        />
+                    ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 })
 

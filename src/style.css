@@ -23,6 +23,30 @@ html, body, #root {
 	margin-right: 0 !important;
 }
 
-.container-post{
+.container-post {
 	max-width: none !important;
+}
+
+
+.card:hover .plus-circle {
+	fill: #1A2141; /* Change to desired hover color */
+}
+
+.card:hover .plus-path {
+	stroke: white; /* Change to desired hover color */
+}
+
+.circle:hover {
+	width: 42px;
+	height: 42px;
+	background: white;
+	border: 2px solid #1A2141;
+}
+
+.circle:hover div {
+	background: #1A2141;
+}
+
+.circle:hover span {
+	color: white;
 }

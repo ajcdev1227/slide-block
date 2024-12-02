@@ -2,7 +2,7 @@ import React, {useEffect, useState, forwardRef, useImperativeHandle} from 'react
 import Group from './Group';
 
 const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, setCurSubIndex, setModalShow}, ref) => {
-    const [translateX, setTranslateX] = useState(0);
+    const [translateX, setTranslateX] = useState(296);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [maxTranslateX, setMaxTranslateX] = useState(0);
@@ -10,9 +10,9 @@ const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, se
     useImperativeHandle(ref, () => setTranslateX);
 
     useEffect(() => {
-        let initialTranslateX = 0;
+        let initialTranslateX = 296;
         for (let i = 0; i < cardsInfo.length - 1; i++) {
-            initialTranslateX += 480 * cardsInfo[i].cardInfo.length;
+            initialTranslateX += 336 + 480 * cardsInfo[i].cardInfo.length;
         }
         initialTranslateX += 480 * (cardsInfo[cardsInfo.length - 1].cardInfo.length - 1);
         setMaxTranslateX(initialTranslateX);
@@ -22,7 +22,7 @@ const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, se
         let initialTranslateX = 0;
         let i, j;
         for (i = 0; i < cardsInfo.length; i++) {
-            initialTranslateX += (i < 3) ? 0 : 500;
+            initialTranslateX += (i < 3) ? 296 : 800;
             if (translateX <= initialTranslateX) {
                 setCurIndex(i);
                 setCurSubIndex(0);
@@ -53,14 +53,14 @@ const Container = forwardRef(({cardsInfo, curIndex, setCurIndex, curSubIndex, se
         if (!isDragging) return;
         const diff = e.clientX - startX;
         setStartX(e.clientX);
-        setTranslateX((prev) => Math.min(maxTranslateX, Math.max(0, prev - diff)));
+        setTranslateX((prev) => Math.min(maxTranslateX, Math.max(296, prev - diff)));
     };
 
     const handleScroll = (e) => {
         setTranslateX((prev) => {
             const sensitivity = 1.5;
             const nextTranslateX = prev + e.deltaY * sensitivity;
-            return Math.min(Math.max(nextTranslateX, 0), maxTranslateX);
+            return Math.min(Math.max(nextTranslateX, 296), maxTranslateX);
         });
     };
 

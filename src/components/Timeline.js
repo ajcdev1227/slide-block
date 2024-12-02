@@ -2,9 +2,9 @@ import React from 'react';
 
 const Timeline = ({cardsInfo, curIndex, curSubIndex, setTranslatePosition}) => {
     const setPosition = (index, subIndex) => {
-        let position = 0;
+        let position = 296;
         for (let j = 0; j < index; j++) {
-            position += 480 * cardsInfo[j].cardInfo.length + 40;
+            position += 480 * cardsInfo[j].cardInfo.length + 336;
         }
         position += 480 * subIndex;
         setTranslatePosition(position);
